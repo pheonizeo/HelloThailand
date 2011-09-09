@@ -1,0 +1,48 @@
+<div class="bluebox" align="center">
+  <h2>Package list</h2>
+</div>
+</br>
+
+<div class="bluebox" align="center">
+  <table rules="rows" frame="below">
+    <tbody>
+    <tr>
+      <th colspan="6" style="text-align: right;">
+        <form method="new_packageinfo_path" action="/packageinfos/new" class="button_to">
+          <div>
+            <input type="submit" value="Add packageinfo">
+
+          </div>
+        </form>
+      </th>
+    </tr>
+    <th style="width: 255px" align="left">Name</th>
+    <th style="width: 50px;text-align: left;"></th>
+    <th style="width: 40px;text-align: left;"></th>
+    <th style="width: 60px;text-align: left;"></th>
+
+
+    <th align="right">
+      <a href="/packageinfos.xml">XML file</a>
+    </th>
+  </tr>
+
+<% @packageinfos.each do |packageinfo| %>
+  <tr>
+    <td><%= packageinfo.name %></td>
+
+    <td><%= link_to 'Show', packageinfo %></td>
+    <td><%= link_to 'Edit', edit_packageinfo_path(packageinfo) %></td>
+    <td><%= link_to 'Destroy', packageinfo, :confirm => 'Are you sure?', :method => :delete %></td>
+   </tr>
+        </tbody>
+    <% end %>
+    </table>
+  <table align="left">
+    <tr>
+      <th style="" align="left">
+        <%= link_to 'Back', :controller => 'admin', :action => 'index' %>
+      </th>
+    </tr>
+  </table>
+</div>

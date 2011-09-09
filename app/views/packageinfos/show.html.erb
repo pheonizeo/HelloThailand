@@ -1,0 +1,38 @@
+<p align="center" id="notice"><%= notice %></p>
+<div class="bluebox" style="text-align: center">
+  <h2><%= @packageinfo.name %></h2>
+</div>
+</br>
+<div class="bluebox" align="left">
+  <table>
+    <tbody>
+
+
+    <p>
+      <b>Details:</b>
+      <%= @packageinfo.details %>
+    </p>
+
+    <p>
+      <b>Price:</b>
+      <%= @packageinfo.price %>
+    </p>
+
+    <p>
+      <b>Contract:</b>
+      <%= @packageinfo.contract %>
+    </p>
+
+    <p>
+      <b>Category:</b>
+      <%= Category.find_by_id(@packageinfo.category_id).name %>
+
+    </p>
+
+
+
+    <%= link_to 'Edit', edit_packageinfo_path(@packageinfo) %> |
+    <%= link_to 'Back', packageinfos_path %>
+    </tbody>
+  </table>
+</div>

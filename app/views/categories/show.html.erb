@@ -1,0 +1,22 @@
+<p align="center" id="notice"><%= notice %></p>
+
+<div class="bluebox" style="text-align: center">
+  <h2>Categories list</h2>
+
+</div>
+</br>
+
+<div class="bluebox" align="left">
+  <table>
+    <tbody>
+    <p>
+      <b>Name:</b>
+      <%= @category.name %>
+    </p>
+
+
+    <%= link_to 'Edit', edit_category_path(@category) %> |
+    <%= link_to 'Back', categories_path %>
+    </tbody>
+  </table>
+</div>

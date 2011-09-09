@@ -1,0 +1,47 @@
+<div class="bluebox" align="center">
+  <h2>Listing catagories</h2>
+</div>
+</br>
+<div class="bluebox" align="center">
+  <table rules="rows" frame="below">
+    <tbody>
+    <tr>
+      <th colspan="6" style="text-align: right;">
+        <form method="new_category_path" action="/categories/new" class="button_to">
+          <div>
+            <input type="submit" value="Add event">
+
+          </div>
+        </form>
+      </th>
+    </tr>
+    <th style="width: 200px" align="left">Name</th>
+    <th style="width: 50px;text-align: left;"></th>
+
+    <th style="width: 50px;text-align: left;"></th>
+    <th style="width: 60px;text-align: left;"></th>
+
+
+    <th align="right">
+      <a href="/categories.xml">XML file</a>
+    </th>
+    </tr>
+
+    <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.name %></td>
+          <td><%= link_to 'Show', category %></td>
+          <td><%= link_to 'Edit', edit_category_path(category) %></td>
+          <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+        </tbody>
+    <% end %>
+    </table>
+  <table align="left">
+    <tr>
+      <th style="" align="left">
+        <%= link_to 'Back', :controller => 'admin', :action => 'index' %>
+      </th>
+    </tr>
+  </table>
+</div>
